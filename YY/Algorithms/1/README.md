@@ -74,3 +74,24 @@ for i in range(len(s)):
         anscnt = nowcnt
 print(ans)
 ```
+Вариант решения №4 (с лекции)
+
+```python
+s = input()
+ans = ''
+anscnt = 0
+
+for now in set(s): # перебор в множестве, составленных из символов строки 
+    nowcnt = 0
+    for j in range(len(s)):
+        if now == s[j]:
+            nowcnt += 1
+    if nowcnt > anscnt:
+        ans = now
+        anscnt = nowcnt
+print(ans)
+```
+
+В предыдущем решении были переборы несколько раз одного и того же. Поэтому данный способ лучше
+
+Вариант решения №5
