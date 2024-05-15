@@ -137,3 +137,30 @@ for i in range(len(seq)):
   seqsum += seg[i]
 print(seqsum)
 ```
+
+Теперь давайте посмотрим на "максимум последовательности"
+
+```python
+seq = list(map(int, input().split()))
+seqmax = 0
+for i in range(len(seq)):
+  if seq[i] > seqmax:
+    seqmax = seq[i]
+print(seqmax)
+```
+
+Какая ошибка в этом коде? Мы не учли момент, если в последовательности будет число отрицательное. В таком случае программа выведет "0". Поэтому давайте доработаем программу
+
+```python
+seq = list(map(int, input().split()))
+if len(seq) == 0: # если последовательность пустая, то мы выводим 
+  print('-inf') # минус бесконечность
+else:
+  seqmax = seq[0]
+  for i in range(1, len(seq)):
+    if seq[i] > seqmax:
+      seqmax = seq[i]
+  print(seqmax)
+```
+
+В данном случае проверка необходима, в отличие от предыдущего кода. Без нее наш код может сломаться. 
